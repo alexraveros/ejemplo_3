@@ -4,9 +4,170 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo_!</title>
+    <link rel="stylesheet" href="CCS/main.cs">
+    <link rel="alternate" href="IMAGENES/descarga.jpg" type="application/atom+xml" title="Atom">  <!--para que aparezca una imagen en la minivisualización de la ventana-->
+    <title>Formulario</title>  <!-- nombre que aparecera en la barra de tareas-->
+
 </head>
 <body>
+    <header>   <!---Encabezado del body-->
+        <h1>FORMULARIO</h1>
+    </header>
+
+    <section>   <!---contenido central del html-->
+        <div>
+            <form action=""></form>
+                <fieldset><!---Le da un recuadro a lo que esté dentro de esta función-->
+                    <legend>Parte uno</legend>  <!--- para poner letra en el recuadro-->
+                    <label for="Nombre">Nombre
+                        <input type="text" id="Nombre" maxlength="20" placeholder="Escribe tu nombre" value="Alexander Ramos">  <!---el comando readonly permite establecer un valor en el campo sin poder modificar-->
+                    </label>    <!---en tipo linea y no en bloque-->
+                    <br>
+                    <br>
+                    <label for="cc">Documento
+                        <input type="text" id="cc" maxlength="20" placeholder="Escribe tu numero de cedula" value="1075256263">  <!---el comando readonly permite establecer un valor en el campo sin poder modificar-->
+                    </label>    <!---en tipo linea y no en bloque-->
+                    <br>
+                    <br>
+                    <!---Poner barra derangos -->
+                    <label for="Edad">Edad
+                        <input type="range" name="" id="Edad" min="18" max="65" step="5">
+                    </label>
+                    <br><br>
+                    
+                    <!--Poner selectores en la barra (aumentar o disminuir)--->
+                    <label for="tiempo_en_la_empresa">Tiempo en la empresa
+                        <input type="number" name="" id="tiempo_en_la_empresa" min="1" max="30" step="2" value="1">
+                    </label>
+                    <br><br>
+
+                    <!---Crear campos para contraseñas-->
+                    <label for="Contraseña">Contraseña
+                        <input type="password" name="" id="Contraseña">
+                    </label>
+                    <br><br>
+
+                    <!---Crear entradas de fecha-->
+                    <label for="Fecha">Fecha
+                        <input type="date" name="" id="Fecha">
+                    </label>
+                    <br><br>
+
+                    <!---selector de colores-->
+                    <label for="Colores">Colores
+                        <input type="color" name="" id="Colores" value="#A533FF">
+
+                    </label>
+                    <br><br>
+                    
+                    <!--Crear un botor - no valida los datos del formulario-->
+                    <label for="Boton">Boton
+                        <input type="button" value="Ingresar">
+                    </label>
+                    <br><br>
+
+                    <!---Fecha semana-->
+                    <label for="Semana">Semana
+                        <input type="week" name="" id="">
+                    </label>
+                    <br><br>
+
+                    <!---Subir un archivo-->
+                    <label for="Archivo">Archivo
+                        <input type="file" name="" id="Archivo" multiple> <!---El multiple es para poder subir varios archivos al tiempo-->
+                    </label>
+                    <br><br>
+
+                    <!--campo de correo electronico (SE NOTA EL CAMBIO EN DISPOSITIVOS MOVILES)-->
+                    <label for="Correo">Correo
+                        <input type="email" name="" id="Correo" value="">
+                    </label>
+                    <br><br>
+                                    
+                    <!--Busqueda--->                
+                    <label for="Busqueda">Busqueda
+                        <input type="search" name="" id="Busqueda">
+                    </label>
+                    <BR></BR>
+                    <input type="submit" value="Enviar_form">  <!---Esta opción de botón si valida la información-->
+                    <input type="reset" value="Reset">  <!---Reset a los campos del formulario-->
+                </fieldset>            
+            </form>
+        </div>  
+
+        <fieldset>
+            <legend>Parte dos</legend>
+            <h1>Ingrese su ciudad</h1>
+            <select name="" id="">
+                <option value="1">Medellin</option>
+                <option value="2">Bogotá</option>
+                <option value="3">Neiva</option>
+                <option value="4">Cali</option>
+                <option value="5">Pereira</option>
+            </select>
+
+            <!--Radio - ej estado civil--->
+            <h1>Estado civil</h1>
+            <label for="">
+                <input type="radio" name="estado civil" id="Radio"> <!--- cuando tiene el mismo nombre comprenden que es 1 elección-->
+                casado                
+            </label>
+            <label for="">
+                <input type="radio" name="estado civil" id="Radio" checked> <!---El comando checked es para poner por defecto la opciobn-->
+                Soltero               
+            </label>
+            <label for="">
+                <input type="radio" name="estado civil" id="Radio">
+                Viudo                
+            </label>
+            <br><br>
+
+            <!---caja check-->
+            <h1>Talentos</h1>
+            <label for="">Dibujar
+                <input type="checkbox" name="" id="" value="2"> <!--el value es el valor que envíara a la base de datos-->
+            </label>
+            <label for="">Cantar
+                <input type="checkbox" name="" id="" value="2">
+            </label>
+            <label for="">Bailar
+                <input type="checkbox" name="" id="" value="3">
+            </label>
+            <label for="">Programar
+                <input type="checkbox" name="" id="" checked value="4">
+            </label>
+            <br><br>
+
+            <!--Texarea- ej observaciones en el formulario -->
+            <h1>Cuadro de texto</h1>
+            <label for="">
+                <textarea name="" id="" cols="60" rows="5"></textarea>
+            </label>
+            <br><br>
+
+            <!--Datalist-->
+            <h1>DataList</h1>
+            <label for="">Ciudades
+                <input type="text" name="Ciudad" id="" list="Ciudades">
+            </label>
+            <datalist id="Ciudades">
+                <option value="Medellin"></option>
+                <option value="Bogotá"></option>
+                <option value="Bucaramanga"></option>
+                <option value="Barranquilla"></option>
+                <option value="Cali"></option>
+
+            </datalist>
+        </fieldset>
+
+    <section>
+
+    <BR>
+    <BR>
+    <BR>
+    <BR>
+    <BR>
+    <BR>
     <h1>Hola este es un h1</h1>
     <h2>Hola este es un h2</h2>
     <h3>Hola este es un h3</h3>
@@ -21,6 +182,16 @@
     <!--- INCLUIR IMAGEN
     </P> -->
     <IMG src="IMAGENES/html5.png" alt="HTML5" width="350" height="190">
-    <img src=""
+    <BR>
+    <BR>
+    <img src="https://res.cloudinary.com/alexraveros/image/upload/v1631453548/sample.jpg" width="380" height="500">
+    <br>
+    <BR>
+    <audio controls src="https://res.cloudinary.com/alexraveros/video/upload/v1631454086/uplifting-motivational-presentation-5060_iwkcat.mp3"></audio>  <!---Insertar audio-->
+    <br>
+    <BR>
+    <video controls src="https://res.cloudinary.com/alexraveros/video/upload/v1631454047/sea-turtle_uwtfcd.mp4"></video>
+    <BR>
+    <br>
 </body>
 </html>
